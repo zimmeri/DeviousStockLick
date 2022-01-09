@@ -1,0 +1,9 @@
+FROM ubuntu
+RUN apt-get update && apt-get install -y python3.8 python3-distutils python3-pip python3-apt python3.8-venv
+RUN python3 -m venv /opt/venv
+RUN mkdir /backend
+WORKDIR /backend
+COPY /backend/requirements.txt /backend
+RUN . /opt/venv/bin/activate && pip install -r requirements.txt
+COPY /backend /backend
+CMD . /opt/venv/bin/activate && exec flask run

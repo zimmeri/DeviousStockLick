@@ -1,0 +1,9 @@
+apscheduler
+flask
+flask_restful
+pandas
+python-dotenv
+torch
+numpy
+transformers
+yfinance

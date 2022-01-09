@@ -1,0 +1,8 @@
+FROM alpine
+RUN apk add --update nodejs npm
+RUN mkdir /ui
+WORKDIR /ui
+COPY /ui/package.json /ui
+RUN npm install
+COPY /ui /ui
+CMD ["npm", "start"]
